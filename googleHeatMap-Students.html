@@ -740,7 +740,7 @@ async function initMap() {
 
 
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 4,
+      zoom: 6.5,
       center: myLatlng,
       mapId: "e2918e3c0ba78449",
     });
@@ -748,24 +748,28 @@ async function initMap() {
   heatmap = new google.maps.visualization.HeatmapLayer({
     data: getPoints(),
     map: map,
+    gradient: ["rgba(42, 26, 216, 0)",
+    "rgba(60, 32, 221, 1)",
+    "rgba(78, 38, 226, 1)",
+    "rgba(96, 44, 231, 1)",
+    "rgba(114, 49, 236, 1)",
+    "rgba(132, 55, 240, 1)",
+    "rgba(149, 61, 245, 1)",
+    "rgba(167, 66, 250, 1)",
+    "rgba(185, 72, 255, 1)",]
   });
   var heatmap2 =  new google.maps.visualization.HeatmapLayer({
     data: getPoints2(),
     map: map,
-    gradient: ["rgba(0, 255, 255, 0)",
-    "rgba(0, 255, 255, 1)",
-    "rgba(0, 191, 255, 1)",
-    "rgba(0, 127, 255, 1)",
-    "rgba(0, 63, 255, 1)",
-    "rgba(0, 0, 255, 1)",
-    "rgba(0, 0, 223, 1)",
-    "rgba(0, 0, 191, 1)",
-    "rgba(0, 0, 159, 1)",
-    "rgba(0, 0, 127, 1)",
-    "rgba(63, 0, 91, 1)",
-    "rgba(127, 0, 63, 1)",
-    "rgba(191, 0, 31, 1)",
-    "rgba(255, 0, 0, 1)",]
+    gradient: ["rgba(0, 237, 1, 0)",
+    "rgba(29, 243, 1, 1)",
+    "rgba(58, 249, 1, 1)",
+    "rgba(97, 250, 0, 1)",
+    "rgba(135, 250, 0, 1)",
+    "rgba(170, 251, 1, 1)",
+    "rgba(206, 251, 2, 1)",
+    "rgba(230, 251, 1, 1)",
+    "rgba(254, 251, 1, 1)",]
   });
   document.getElementById("toggle-heatmap").addEventListener("click", toggleHeatmap);
   document.getElementById("toggle-heatmap2").addEventListener("click", toggleHeatmap2);
@@ -795,8 +799,8 @@ function getPoints2() {
 
     </script>
   <script async
-  src="https://maps.googleapis.com/maps/api/js?key=&loading=async&libraries=visualization&callback=initMap">
-</script>
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX3tX0-rzm1jfohv0kjfONob0KfxF8toI&loading=async&libraries=visualization&callback=initMap">
+  </script>
 
   </body>
 </html>
